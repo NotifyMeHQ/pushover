@@ -27,13 +27,6 @@ class PushoverGateway extends AbstractGateway implements GatewayInterface
     protected $endpoint = 'https://api.pushover.net';
 
     /**
-     * Gateway display name.
-     *
-     * @var string
-     */
-    protected $displayName = 'pushover';
-
-    /**
      * Pushover api version.
      *
      * @var string
