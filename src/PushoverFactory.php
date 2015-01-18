@@ -12,6 +12,8 @@
 
 namespace NotifyMeHQ\Pushover;
 
+use GuzzleHttp\Client;
+use NotifyMeHQ\NotifyMe\Arr;
 use NotifyMeHQ\NotifyMe\FactoryInterface;
 
 class PushoverFactory implements FactoryInterface
@@ -25,6 +27,10 @@ class PushoverFactory implements FactoryInterface
      */
     public function make(array $config)
     {
-        return new PushoverGateway($config);
+        Arr::requires($config, ['token']);
+
+        $client = new Client();
+
+        return new PushoverGateway($client, $config);
     }
 }
