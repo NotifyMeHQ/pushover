@@ -97,13 +97,16 @@ class PushoverGateway implements GatewayInterface
     /**
      * Send a notification.
      *
+     * @param string   $to
      * @param string   $message
      * @param string[] $options
      *
      * @return \NotifyMeHQ\NotifyMe\Response
      */
-    public function notify($message, array $options = [])
+    public function notify($to, $message, array $options = [])
     {
+        $options['to'] = $to;
+        
         $params = $this->addMessage($message, $params, $options);
 
         return $this->commit('post', $this->buildUrlFromString('messages.json'), $params);
