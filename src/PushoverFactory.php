@@ -13,7 +13,7 @@ namespace NotifyMeHQ\Pushover;
 
 use GuzzleHttp\Client;
 use NotifyMeHQ\NotifyMe\Arr;
-use NotifyMeHQ\NotifyMe\FactoryInterface;
+use NotifyMeHQ\Contracts\FactoryInterface;
 
 class PushoverFactory implements FactoryInterface
 {
