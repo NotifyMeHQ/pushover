@@ -94,7 +94,7 @@ class PushoverGateway implements GatewayInterface
             'user'    => $to,
             'device'  => Arr::get($this->config, 'device', ''),
             'title'   => Arr::get($this->config, 'title', ''),
-            'message' => $message
+            'message' => $message,
         ];
 
         if (isset($this->config['sound'])) {
